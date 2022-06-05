@@ -1,10 +1,17 @@
 import { Controller, Get, DefaultValuePipe, Query } from '@nestjs/common';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { ProductsPersistenceService } from '../out/products-persistence.service';
 import { IGetProductsRequest } from '../../application/get-products.request';
 import { ProductSearchDto } from './dtos/search-product.dto';
-import { ProductByCategoryDto } from './dtos/category-product.dto'
+import { ProductByCategoryDto } from './dtos/category-product.dto';
 
-@Controller('products')
+
+const entity = 'products';
+@ApiTags(entity)
+@Controller({
+    path: entity,
+    version: '1'
+})
 export class ProductsController {
     private getproductRequest:  IGetProductsRequest
     constructor(
