@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IGetProductsRequest} from '../../application/get-Products.request';
+import { IGetProductsRequest} from '../../application/get-products.request';
 import { ProductsMySqlService } from './products-mysql.service';
 import { ISpGetProducts } from './sp-interface/sp-get-products';
 import { ProductSearchDto} from '../in/dtos/search-product.dto'
