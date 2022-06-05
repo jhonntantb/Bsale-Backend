@@ -1,7 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { IGetCategoriesRequest } from '../../aplication/get-category.request';
-import { CategoryPersistenceService} from '../out/category-persistence.service'
+import { CategoryPersistenceService } from '../out/category-persistence.service';
+import { GetCategoryResponse } from './dtos/category.dto';
 
 const entity = 'category';
 @ApiTags(entity)
@@ -19,8 +20,9 @@ export class CategoryController {
     }
     
     @Get()
+    @ApiOkResponse({type: GetCategoryResponse})
     async  getCategories(){
         const categories = await this.getCategoriesRequest.getCategories(); 
-        return categories
+        return categories;
     }
 }

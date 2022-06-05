@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ProductsModule } from './products/products.module';
 import { CategoryModule } from './category/category.module';
 import { Product } from './products/model/product.model';
+import { Category } from './category/model/category.model'
 
 
 @Module({
@@ -25,7 +26,7 @@ import { Product } from './products/model/product.model';
         autoLoadModels: false,
         synchronize: true,
         ssl: false,
-        models:[Product]
+        models:[Product, Category]
       }),
     }),
     ProductsModule,

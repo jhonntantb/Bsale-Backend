@@ -4,6 +4,7 @@ import { ProductsPersistenceService } from '../out/products-persistence.service'
 import { IGetProductsRequest } from '../../application/get-products.request';
 import { ProductSearchDto } from './dtos/search-product.dto';
 import { ProductByCategoryDto } from './dtos/category-product.dto';
+import { ProductSearchResponse } from './dtos/product.dto'
 
 
 const entity = 'products';
@@ -21,12 +22,14 @@ export class ProductsController {
     }
 
     @Get()
+    @ApiOkResponse({type:  ProductSearchResponse})
     async getAllProducts() {
         const products = await this.getproductRequest.getAllProducts()
         return products;
     };
 
     @Get('search')
+    @ApiOkResponse({type:  ProductSearchResponse})
     async getSearchProducts(
         @Query('start', new DefaultValuePipe('0')) start: string,
         @Query('size', new DefaultValuePipe('10')) size: string,
@@ -38,6 +41,7 @@ export class ProductsController {
     }
 
     @Get('category')
+    @ApiOkResponse({type:  ProductSearchResponse})
     async getProductsByCategoy(
         @Query('categoryId', new DefaultValuePipe('2')) categoryId: string,
         @Query('start', new DefaultValuePipe('0')) start: string,

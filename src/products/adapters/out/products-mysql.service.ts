@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { IProductsRepository } from './products.repository'
 import { ISpGetProducts } from './sp-interface/sp-get-products';
 import { InjectModel } from '@nestjs/sequelize';
-import { QueryTypes, Sequelize } from 'sequelize';
 import { Product} from '../../model/product.model'
 import { Op } from 'sequelize';
 import { ProductSearchDto } from '../in/dtos/search-product.dto';
