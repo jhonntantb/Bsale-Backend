@@ -16,6 +16,13 @@ export class ProductDto {
     @ApiProperty()
     category:number;
 }
+
+export class PaginationDto {
+    @ApiProperty()
+    start: string;
+    size: string;
+}
+
 class ConfigResponse {
     @ApiProperty()
     totalItems: number;

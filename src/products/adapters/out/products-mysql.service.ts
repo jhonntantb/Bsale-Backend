@@ -6,6 +6,7 @@ import { Product} from '../../model/product.model'
 import { Op } from 'sequelize';
 import { ProductSearchDto } from '../in/dtos/search-product.dto';
 import { ProductByCategoryDto }from '../in/dtos/category-product.dto';
+import { PaginationDto } from '../in/dtos/product.dto'
 
 
 @Injectable()
@@ -14,17 +15,18 @@ export class ProductsMySqlService implements IProductsRepository {
         @InjectModel(Product) private productModel: typeof Product,
     ){}
 
-    async getAllProducts(): Promise<ISpGetProducts[]> {
+    async getAllProducts(dto: PaginationDto): Promise<any> {
         try {
             const products: any[] = await this.productModel.findAll({
                 attributes:['name', 'url_image', 'price', 'discount', 'category']
             })
-            return products
+            const count = await this.productModel.count();
+            return {totalItems: count, start:dto.start, size: dto.size, results:products}
         } catch (error) {
             console.log("error",error)
         }
     }
-    async getSearchProducts(searchDto: ProductSearchDto): Promise<any[]> {
+    async getSearchProducts(searchDto: ProductSearchDto): Promise<any> {
         try {
             const products: any[] = await this.productModel.findAll({
                 where: {
@@ -37,12 +39,19 @@ export class ProductsMySqlService implements IProductsRepository {
                 offset: parseInt(searchDto.start),
 
             })
-            return products
+            const count = await this.productModel.count({
+                where: {
+                    name:{
+                        [Op.like]: `%${searchDto.search}%`,
+                    }
+                }
+            });
+            return {totalItems: count, start:searchDto.start, size: searchDto.size, results:products}
         } catch (error) {
             console.log('error',error)
         }
     }
-    async getProductsByCategory( dto: ProductByCategoryDto): Promise<ISpGetProducts[]> {
+    async getProductsByCategory( dto: ProductByCategoryDto): Promise<any> {
         try {
             const products: any[] = await this.productModel.findAll({
                 where:{
@@ -52,7 +61,12 @@ export class ProductsMySqlService implements IProductsRepository {
                 limit: parseInt(dto.size),
                 offset: parseInt(dto.start),
             })
-            return products
+            const count = await this.productModel.count( {
+                where:{
+                    category: parseInt(dto.categoryId)
+                }
+            });
+            return {totalItems: count, start:dto.start, size: dto.size, results:products}
         } catch (error) {
             console.log(error)
         }
