@@ -1,73 +1,63 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# Jhonntan Bsale Api
+# Bsale Backend Website
+![BsaleBackendWeb](/images/BsaleBackendWeb.JPG)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Demo Website
 
-## Description
+- 👉 Heroku : [https://bsale-backend-jhonntan.herokuapp.com/docs](https://bsale-backend-jhonntan.herokuapp.com/docs)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
 
-```bash
+## Technologies
+
+- TypeScript
+- NodeJS & NestJS: Web API, 
+- MySql: Sequelize,
+- Development: Git, Github, Sequelize
+- Deployment: Heroku
+
+## Run Locally
+
+### 1. Clone repo
+
+```
+$ git clone https://github.com/jhonntantb/Bsale-Backend
+$ cd Bsale-backend
+```
+
+### 2. Setup MySQL
+ - Download and Install it from [mysql.com](https://dev.mysql.com/downloads/installer)
+
+### 3. Create .env file
+- Create .env file in project folder
+- Enter these lines to that:
+
+```
+MY_SQL_HOST=mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com
+MY_SQL_USERNAME=bsale_test
+MY_SQL_PASSWORD=bsale_test
+MY_SQL_DATABASE=bsale_test
+```
+
+### 4. Run Backend
+
+```
 $ npm install
-```
-
-## Running the app
-
-```bash
-# development
 $ npm run start
-
-# watch mode
+```
+- the server continue listening
+```
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
+### 6. View API documentation
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+- Run this on chrome: http://localhost:8080/docs
+- Click the Entity
+- View Parameters 
+- Go to Postman and test Bsale Backend Api
 
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Contact Instructor: [Jhonntan](mailto:Jhonntan.jhonntantb@gmail.com)
