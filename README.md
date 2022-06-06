@@ -58,6 +58,11 @@ $ npm run start:dev
 - View Parameters 
 - Go to Postman and test Bsale Backend Api
 
+### 7. Comments
+- The query Products has pagination.
+- The pagination in backend used for scalability.
+- Management big data.
+
 ## Support
 
 - Contact Instructor: [Jhonntan](mailto:Jhonntan.jhonntantb@gmail.com)
