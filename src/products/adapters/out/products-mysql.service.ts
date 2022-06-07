@@ -18,7 +18,9 @@ export class ProductsMySqlService implements IProductsRepository {
     async getAllProducts(dto: PaginationDto): Promise<any> {
         try {
             const products: any[] = await this.productModel.findAll({
-                attributes:['name', 'url_image', 'price', 'discount', 'category']
+                attributes:['name', 'url_image', 'price', 'discount', 'category'],
+                limit: parseInt(dto.size),
+                offset: parseInt(dto.start)
             })
             const count = await this.productModel.count();
             return {totalItems: count, start:dto.start, size: dto.size, results:products}
