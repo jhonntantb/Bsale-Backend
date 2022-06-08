@@ -18,5 +18,8 @@ export class ProductsPersistenceService implements IGetProductsRequest {
     getProductsByCategory(categoryDto: ProductByCategoryDto): Promise<ISpGetProducts[]> {
         return this.productMySqlServer.getProductsByCategory(categoryDto);
     }
+    getProductsWithDiscount(dto: PaginationDto): Promise<ISpGetProducts[]> {
+        return this.productMySqlServer.getProductsWithDiscount(dto)
+    }
     
 }

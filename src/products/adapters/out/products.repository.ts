@@ -7,4 +7,5 @@ export interface IProductsRepository {
     getAllProducts(dto: PaginationDto): Promise<ISpGetProducts[]>;
     getSearchProducts( searchdto: ProductSearchDto): Promise<any[]>;
     getProductsByCategory( categoryDto: ProductByCategoryDto): Promise<ISpGetProducts[]>;
+    getProductsWithDiscount(dto: PaginationDto): Promise<ISpGetProducts[]>;
 }

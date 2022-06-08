@@ -57,4 +57,15 @@ export class ProductsController {
         const products = await this.getproductRequest.getProductsByCategory(query)
         return products;
     }
+    
+    @Get('discount')
+    @ApiOkResponse({type:  ProductSearchResponse})
+    async getProductsWhitDiscount(
+        @Query('start', new DefaultValuePipe('0')) start: string,
+        @Query('size', new DefaultValuePipe('10')) size: string
+    ){
+        const query: PaginationDto = {start, size};
+        const products = await this.getproductRequest.getProductsWithDiscount(query)
+        return products;
+    }
 }

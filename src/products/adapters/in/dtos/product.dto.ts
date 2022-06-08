@@ -20,6 +20,8 @@ export class ProductDto {
 export class PaginationDto {
     @ApiProperty()
     start: string;
+    
+    @ApiProperty()
     size: string;
 }
 

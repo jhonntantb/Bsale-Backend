@@ -7,4 +7,5 @@ export interface IGetProductsRequest {
     getAllProducts(dto: PaginationDto ): Promise<ISpGetProducts[]>;
     getSearchProducts(searchDto: ProductSearchDto): Promise<ISpGetProducts[]>;
     getProductsByCategory(categoryDto: ProductByCategoryDto): Promise<ISpGetProducts[]>;
+    getProductsWithDiscount(dto: PaginationDto ): Promise<ISpGetProducts[]>;
 }

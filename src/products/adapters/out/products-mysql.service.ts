@@ -73,4 +73,28 @@ export class ProductsMySqlService implements IProductsRepository {
             console.log(error)
         }
     }
+    async getProductsWithDiscount(dto: PaginationDto): Promise<any> {
+        try {
+            const products: any[] = await this.productModel.findAll({
+                where:{
+                    discount:{
+                        [Op.ne] : 0,
+                    }
+                },
+                attributes:['name', 'url_image', 'price', 'discount', 'category'],
+                limit: parseInt(dto.size),
+                offset: parseInt(dto.start),
+            })
+            const count = await this.productModel.count( {
+                where:{
+                    discount:{
+                        [Op.ne] : 0,
+                    }
+                },
+            });
+            return {totalItems: count, start:dto.start, size: dto.size, results:products}
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
