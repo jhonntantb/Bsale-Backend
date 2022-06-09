@@ -9,7 +9,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api')
   const options = new DocumentBuilder()
         .setTitle('Bsale Backend API')
-        .setDescription('Bsale query monolithic')
+        .setDescription('Bsale monolithic REST API')
         .setVersion('0.1')
         .addBearerAuth()
         .build();
