@@ -65,4 +65,4 @@ $ npm run start:dev
 
 ## Support
 
-- Contact Instructor: [Jhonntan](mailto:Jhonntan.jhonntantb@gmail.com)
+- Contact Developer: [Jhonntan](mailto:Jhonntan.jhonntantb@gmail.com)
